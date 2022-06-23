@@ -263,7 +263,6 @@ class ExportsInfo(FeatureType):
         exports_hashed = FeatureHasher(128, input_type="string").transform([raw_obj]).toarray()[0]
         return exports_hashed.astype(np.float32)
 
-"""
 
 class GeneralFileInfo(FeatureType):
     ''' General information about the file '''
@@ -275,9 +274,9 @@ class GeneralFileInfo(FeatureType):
         super(FeatureType, self).__init__()
 
     def raw_features(self, root):
-        if lief_binary is None:
+        if root is None:
             return {
-                'size': len(bytez),
+                'size': 0,
                 'vsize': 0,
                 'has_debug': 0,
                 'exports': 0,
@@ -290,16 +289,16 @@ class GeneralFileInfo(FeatureType):
             }
 
         return {
-            'size': len(bytez),
-            'vsize': lief_binary.virtual_size,
-            'has_debug': int(lief_binary.has_debug),
-            'exports': len(lief_binary.exported_functions),
-            'imports': len(lief_binary.imported_functions),
-            'has_relocations': int(lief_binary.has_relocations),
-            'has_resources': int(lief_binary.has_resources),
-            'has_signature': int(lief_binary.has_signatures) if LIEF_HAS_SIGNATURE else int(lief_binary.has_signature),
-            'has_tls': int(lief_binary.has_tls),
-            'symbols': len(lief_binary.symbols),
+            'size': int(root['customFields']['size']),
+            'vsize': int(root['virtual_size']),
+            'has_debug': int(root['customFields']['has_debug']),
+            'exports': len(root['export']['entries']),
+            'imports': sum(len(e['entries']) for e in root['imports']),
+            'has_relocations': int(root['customFields']['has_relocations']),
+            'has_resources': int(root['customFields']['has_resources']),
+            'has_signature': int(root['customFields']['has_signatures']),
+            'has_tls': int(root['customFields']['has_tls']),
+            'symbols': len(root['symbols']),
         }
 
     def process_raw_features(self, raw_obj):
@@ -310,6 +309,7 @@ class GeneralFileInfo(FeatureType):
         ],
                           dtype=np.float32)
 
+"""
 
 class HeaderFileInfo(FeatureType):
     ''' Machine, architecure, OS, linker and other information extracted from header '''
@@ -492,7 +492,7 @@ class PEFeatureExtractor(object):
                     #'ByteHistogram': ByteHistogram(),
                     #'ByteEntropyHistogram': ByteEntropyHistogram(),
                     #'StringExtractor': StringExtractor(),
-                    #'GeneralFileInfo': GeneralFileInfo(),
+                    'GeneralFileInfo': GeneralFileInfo(),
                     #'HeaderFileInfo': HeaderFileInfo(),
                     #'SectionInfo': SectionInfo(),
                     'ImportsInfo': ImportsInfo(),
