@@ -34,7 +34,7 @@ class FeatureType(object):
     def __repr__(self):
         return '{}({})'.format(self.name, self.dim)
 
-    def raw_features(self, bytez, lief_binary):
+    def raw_features(self, root):
         ''' Generate a JSON-able representation of the file '''
         raise (NotImplementedError)
 
@@ -42,12 +42,12 @@ class FeatureType(object):
         ''' Generate a feature vector from the raw features '''
         raise (NotImplementedError)
 
-    def feature_vector(self, bytez, lief_binary):
+    def feature_vector(self, root):
         ''' Directly calculate the feature vector from the sample itself. This should only be implemented differently
         if there are significant speedups to be gained from combining the two functions. '''
-        return self.process_raw_features(self.raw_features(bytez, lief_binary))
+        return self.process_raw_features(self.raw_features(root))
 
-
+"""
 class ByteHistogram(FeatureType):
     ''' Byte histogram (count + non-normalized) over the entire binary file '''
 
@@ -57,7 +57,7 @@ class ByteHistogram(FeatureType):
     def __init__(self):
         super(FeatureType, self).__init__()
 
-    def raw_features(self, bytez, lief_binary):
+    def raw_features(self, root):
         counts = np.bincount(np.frombuffer(bytez, dtype=np.uint8), minlength=256)
         return counts.tolist()
 
@@ -96,7 +96,7 @@ class ByteEntropyHistogram(FeatureType):
 
         return Hbin, c
 
-    def raw_features(self, bytez, lief_binary):
+    def raw_features(self, root):
         output = np.zeros((16, 16), dtype=np.int)
         a = np.frombuffer(bytez, dtype=np.uint8)
         if a.shape[0] < self.window:
@@ -137,8 +137,8 @@ class SectionInfo(FeatureType):
     def _properties(s):
         return [str(c).split('.')[-1] for c in s.characteristics_lists]
 
-    def raw_features(self, bytez, lief_binary):
-        if lief_binary is None:
+    def raw_features(self, root):
+        if root is None:
             return {"entry": "", "sections": []}
 
         # properties of entry point, or if invalid, the first executable section
@@ -191,7 +191,7 @@ class SectionInfo(FeatureType):
             general, section_sizes_hashed, section_entropy_hashed, section_vsize_hashed, entry_name_hashed,
             characteristics_hashed
         ]).astype(np.float32)
-
+"""
 
 class ImportsInfo(FeatureType):
     ''' Information about imported libraries and functions from the
@@ -205,22 +205,22 @@ class ImportsInfo(FeatureType):
     def __init__(self):
         super(FeatureType, self).__init__()
 
-    def raw_features(self, bytez, lief_binary):
+    def raw_features(self, root):
         imports = {}
-        if lief_binary is None:
+        if root is None:
             return imports
 
-        for lib in lief_binary.imports:
-            if lib.name not in imports:
-                imports[lib.name] = []  # libraries can be duplicated in listing, extend instead of overwrite
+        for lib in root['imports']:
+            if lib['name'] not in imports:
+                imports[lib['name']] = []  # libraries can be duplicated in listing, extend instead of overwrite
 
             # Clipping assumes there are diminishing returns on the discriminatory power of imported functions
             #  beyond the first 10000 characters, and this will help limit the dataset size
-            for entry in lib.entries:
-                if entry.is_ordinal:
-                    imports[lib.name].append("ordinal" + str(entry.ordinal))
+            for entry in lib['entries']:
+                if 'name' not in entry:
+                    imports[lib['name']].append("ordinal" + str(entry['hint']))
                 else:
-                    imports[lib.name].append(entry.name[:10000])
+                    imports[lib['name']].append(entry['name'][:10000])
 
         return imports
 
@@ -236,7 +236,6 @@ class ImportsInfo(FeatureType):
         # Two separate elements: libraries (alone) and fully-qualified names of imported functions
         return np.hstack([libraries_hashed, imports_hashed]).astype(np.float32)
 
-
 class ExportsInfo(FeatureType):
     ''' Information about exported functions. Note that the total number of exported
     functions is contained in GeneralFileInfo.
@@ -248,26 +247,23 @@ class ExportsInfo(FeatureType):
     def __init__(self):
         super(FeatureType, self).__init__()
 
-    def raw_features(self, bytez, lief_binary):
-        if lief_binary is None:
-            return []
+    def raw_features(self, root):
+        exports = []
+        if root is None:
+            return exports
 
         # Clipping assumes there are diminishing returns on the discriminatory power of exports beyond
         #  the first 10000 characters, and this will help limit the dataset size
-        if LIEF_EXPORT_OBJECT:
-            # export is an object with .name attribute (0.10.0 and later)
-            clipped_exports = [export.name[:10000] for export in lief_binary.exported_functions]
-        else:
-            # export is a string (LIEF 0.9.0 and earlier)
-            clipped_exports = [export[:10000] for export in lief_binary.exported_functions]
 
+        exports = [export['name'][:10000] for export in root['export']['entries']]
 
-        return clipped_exports
+        return exports
 
     def process_raw_features(self, raw_obj):
         exports_hashed = FeatureHasher(128, input_type="string").transform([raw_obj]).toarray()[0]
         return exports_hashed.astype(np.float32)
 
+"""
 
 class GeneralFileInfo(FeatureType):
     ''' General information about the file '''
@@ -278,7 +274,7 @@ class GeneralFileInfo(FeatureType):
     def __init__(self):
         super(FeatureType, self).__init__()
 
-    def raw_features(self, bytez, lief_binary):
+    def raw_features(self, root):
         if lief_binary is None:
             return {
                 'size': len(bytez),
@@ -324,7 +320,7 @@ class HeaderFileInfo(FeatureType):
     def __init__(self):
         super(FeatureType, self).__init__()
 
-    def raw_features(self, bytez, lief_binary):
+    def raw_features(self, root):
         raw_obj = {}
         raw_obj['coff'] = {'timestamp': 0, 'machine': "", 'characteristics': []}
         raw_obj['optional'] = {
@@ -410,7 +406,7 @@ class StringExtractor(FeatureType):
         # crude evidence of an MZ header (dropper?) somewhere in the byte stream
         self._mz = re.compile(b'MZ')
 
-    def raw_features(self, bytez, lief_binary):
+    def raw_features(self, root):
         allstrings = self._allstrings.findall(bytez)
         if allstrings:
             # statistics about strings:
@@ -465,7 +461,7 @@ class DataDirectories(FeatureType):
             "BOUND_IMPORT", "IAT", "DELAY_IMPORT_DESCRIPTOR", "CLR_RUNTIME_HEADER"
         ]
 
-    def raw_features(self, bytez, lief_binary):
+    def raw_features(self, root):
         output = []
         if lief_binary is None:
             return output
@@ -485,20 +481,20 @@ class DataDirectories(FeatureType):
                 features[2 * i] = raw_obj[i]["size"]
                 features[2 * i + 1] = raw_obj[i]["virtual_address"]
         return features
-
+"""
 
 class PEFeatureExtractor(object):
     ''' Extract useful features from a PE file, and return as a vector of fixed size. '''
 
-    def __init__(self, feature_version=2, print_feature_warning=True, features_file=''):
+    def __init__(self, feature_version=3, print_feature_warning=True, features_file=''):
         self.features = []
         features = {
-                    'ByteHistogram': ByteHistogram(),
-                    'ByteEntropyHistogram': ByteEntropyHistogram(),
-                    'StringExtractor': StringExtractor(),
-                    'GeneralFileInfo': GeneralFileInfo(),
-                    'HeaderFileInfo': HeaderFileInfo(),
-                    'SectionInfo': SectionInfo(),
+                    #'ByteHistogram': ByteHistogram(),
+                    #'ByteEntropyHistogram': ByteEntropyHistogram(),
+                    #'StringExtractor': StringExtractor(),
+                    #'GeneralFileInfo': GeneralFileInfo(),
+                    #'HeaderFileInfo': HeaderFileInfo(),
+                    #'SectionInfo': SectionInfo(),
                     'ImportsInfo': ImportsInfo(),
                     'ExportsInfo': ExportsInfo()
             }
@@ -516,6 +512,7 @@ class PEFeatureExtractor(object):
                     print(f"WARNING: EMBER feature version 1 were computed using lief version 0.8.3-18d5b75")
                     print(f"WARNING:   lief version {lief.__version__} found instead. There may be slight inconsistencies")
                     print(f"WARNING:   in the feature calculations.")
+            """
         elif feature_version == 2:
             self.features.append(DataDirectories())
             if not lief.__version__.startswith("0.9.0"):
@@ -523,30 +520,22 @@ class PEFeatureExtractor(object):
                     print(f"WARNING: EMBER feature version 2 were computed using lief version 0.9.0-")
                     print(f"WARNING:   lief version {lief.__version__} found instead. There may be slight inconsistencies")
                     print(f"WARNING:   in the feature calculations.")
+            """
+        elif feature_version == 3:
+            pass  # ok
         else:
             raise Exception(f"EMBER feature version must be 1 or 2. Not {feature_version}")
         self.dim = sum([fe.dim for fe in self.features])
 
-    def raw_features(self, bytez):
-        lief_errors = (lief.bad_format, lief.bad_file, lief.pe_error, lief.parser_error, lief.read_out_of_bound,
-                       RuntimeError)
-        try:
-            lief_binary = lief.PE.parse(list(bytez))
-            #lief_binary = lief.PE.parse('tool_versions.exe')
-            #print(lief_binary)
-        except lief_errors as e:
-            print("lief error: ", str(e))
-            lief_binary = None
-        except Exception:  # everything else (KeyboardInterrupt, SystemExit, ValueError):
-            raise
-
-        features = {"sha256": hashlib.sha256(bytez).hexdigest()}
-        features.update({fe.name: fe.raw_features(bytez, lief_binary) for fe in self.features})
+    def raw_features(self, root):
+        features = {}
+        #features = {"sha256": root['sha256']}
+        features.update({fe.name: fe.raw_features(root) for fe in self.features})
         return features
 
     def process_raw_features(self, raw_obj):
         feature_vectors = [fe.process_raw_features(raw_obj[fe.name]) for fe in self.features]
         return np.hstack(feature_vectors).astype(np.float32)
 
-    def feature_vector(self, bytez):
-        return self.process_raw_features(self.raw_features(bytez))
+    def feature_vector(self, root):
+        return self.process_raw_features(self.raw_features(root))
