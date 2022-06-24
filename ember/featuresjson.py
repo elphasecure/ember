@@ -309,7 +309,6 @@ class GeneralFileInfo(FeatureType):
         ],
                           dtype=np.float32)
 
-"""
 
 class HeaderFileInfo(FeatureType):
     ''' Machine, architecure, OS, linker and other information extracted from header '''
@@ -339,30 +338,30 @@ class HeaderFileInfo(FeatureType):
             'sizeof_headers': 0,
             'sizeof_heap_commit': 0
         }
-        if lief_binary is None:
+        if root is None:
             return raw_obj
 
-        raw_obj['coff']['timestamp'] = lief_binary.header.time_date_stamps
-        raw_obj['coff']['machine'] = str(lief_binary.header.machine).split('.')[-1]
-        raw_obj['coff']['characteristics'] = [str(c).split('.')[-1] for c in lief_binary.header.characteristics_list]
-        raw_obj['optional']['subsystem'] = str(lief_binary.optional_header.subsystem).split('.')[-1]
+        raw_obj['coff']['timestamp'] = root['header']['time_date_stamp']
+        raw_obj['coff']['machine'] = str(root['header']['machine']).split('.')[-1]
+        raw_obj['coff']['characteristics'] = [str(c).split('.')[-1] for c in root['customFields']['header_characteristics']]
+        raw_obj['optional']['subsystem'] = str(root['optional_header']['subsystem']).split('.')[-1]
         raw_obj['optional']['dll_characteristics'] = [
-            str(c).split('.')[-1] for c in lief_binary.optional_header.dll_characteristics_lists
+            str(c).split('.')[-1] for c in root['customFields']['optional_header_characteristics']
         ]
-        raw_obj['optional']['magic'] = str(lief_binary.optional_header.magic).split('.')[-1]
-        raw_obj['optional']['major_image_version'] = lief_binary.optional_header.major_image_version
-        raw_obj['optional']['minor_image_version'] = lief_binary.optional_header.minor_image_version
-        raw_obj['optional']['major_linker_version'] = lief_binary.optional_header.major_linker_version
-        raw_obj['optional']['minor_linker_version'] = lief_binary.optional_header.minor_linker_version
+        raw_obj['optional']['magic'] = str(root['optional_header']['magic']).split('.')[-1]
+        raw_obj['optional']['major_image_version'] = root['optional_header']['major_image_version']
+        raw_obj['optional']['minor_image_version'] = root['optional_header']['minor_image_version']
+        raw_obj['optional']['major_linker_version'] = root['optional_header']['major_linker_version']
+        raw_obj['optional']['minor_linker_version'] = root['optional_header']['minor_linker_version']
         raw_obj['optional'][
-            'major_operating_system_version'] = lief_binary.optional_header.major_operating_system_version
+            'major_operating_system_version'] = root['optional_header']['major_operating_system_version']
         raw_obj['optional'][
-            'minor_operating_system_version'] = lief_binary.optional_header.minor_operating_system_version
-        raw_obj['optional']['major_subsystem_version'] = lief_binary.optional_header.major_subsystem_version
-        raw_obj['optional']['minor_subsystem_version'] = lief_binary.optional_header.minor_subsystem_version
-        raw_obj['optional']['sizeof_code'] = lief_binary.optional_header.sizeof_code
-        raw_obj['optional']['sizeof_headers'] = lief_binary.optional_header.sizeof_headers
-        raw_obj['optional']['sizeof_heap_commit'] = lief_binary.optional_header.sizeof_heap_commit
+            'minor_operating_system_version'] = root['optional_header']['minor_operating_system_version']
+        raw_obj['optional']['major_subsystem_version'] = root['optional_header']['major_subsystem_version']
+        raw_obj['optional']['minor_subsystem_version'] = root['optional_header']['minor_subsystem_version']
+        raw_obj['optional']['sizeof_code'] = root['optional_header']['sizeof_code']
+        raw_obj['optional']['sizeof_headers'] = root['optional_header']['sizeof_headers']
+        raw_obj['optional']['sizeof_heap_commit'] = root['optional_header']['sizeof_heap_commit']
         return raw_obj
 
     def process_raw_features(self, raw_obj):
@@ -387,6 +386,7 @@ class HeaderFileInfo(FeatureType):
         ]).astype(np.float32)
 
 
+        """
 class StringExtractor(FeatureType):
     ''' Extracts strings from raw byte stream '''
 
@@ -493,7 +493,7 @@ class PEFeatureExtractor(object):
                     #'ByteEntropyHistogram': ByteEntropyHistogram(),
                     #'StringExtractor': StringExtractor(),
                     'GeneralFileInfo': GeneralFileInfo(),
-                    #'HeaderFileInfo': HeaderFileInfo(),
+                    'HeaderFileInfo': HeaderFileInfo(),
                     #'SectionInfo': SectionInfo(),
                     'ImportsInfo': ImportsInfo(),
                     'ExportsInfo': ExportsInfo()
