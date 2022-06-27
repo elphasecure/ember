@@ -121,6 +121,7 @@ class ByteEntropyHistogram(FeatureType):
         normalized = counts / sum
         return normalized
 
+"""
 
 class SectionInfo(FeatureType):
     ''' Information about section names, sizes and entropy.  Uses hashing trick
@@ -135,32 +136,29 @@ class SectionInfo(FeatureType):
 
     @staticmethod
     def _properties(s):
-        return [str(c).split('.')[-1] for c in s.characteristics_lists]
+        return [str(c).split('.')[-1] for c in s['characteristics']]
 
     def raw_features(self, root):
         if root is None:
             return {"entry": "", "sections": []}
 
         # properties of entry point, or if invalid, the first executable section
-        try:
-            print("searching based on lief_binary.entrypoint", hex(lief_binary.entrypoint))
-            entry_section = lief_binary.section_from_offset(lief_binary.entrypoint).name
-        except (lief.not_found, AttributeError):
-            # bad entry point, let's find the first executable section
-            entry_section = ""
-            for s in lief_binary.sections:
-                if lief.PE.SECTION_CHARACTERISTICS.MEM_EXECUTE in s.characteristics_lists:
-                    entry_section = s.name
+        entry_section = root['customFields']['entry_point']
+        if entry_section == "":
+            for s in root['sections']:
+                if "MEM_EXECUTE" in s['characteristics']:
+                    entry_section = s['name']
                     break
+
 
         raw_obj = {"entry": entry_section}
         raw_obj["sections"] = [{
-            'name': s.name,
-            'size': s.size,
-            'entropy': s.entropy,
-            'vsize': s.virtual_size,
+            'name': s['name'],
+            'size': s['size'],
+            'entropy': s['entropy'],
+            'vsize': s['vsize'],
             'props': self._properties(s)
-        } for s in lief_binary.sections]
+        } for s in root['sections']]
         return raw_obj
 
     def process_raw_features(self, raw_obj):
@@ -191,7 +189,6 @@ class SectionInfo(FeatureType):
             general, section_sizes_hashed, section_entropy_hashed, section_vsize_hashed, entry_name_hashed,
             characteristics_hashed
         ]).astype(np.float32)
-"""
 
 class ImportsInfo(FeatureType):
     ''' Information about imported libraries and functions from the
@@ -494,7 +491,7 @@ class PEFeatureExtractor(object):
                     #'StringExtractor': StringExtractor(),
                     'GeneralFileInfo': GeneralFileInfo(),
                     'HeaderFileInfo': HeaderFileInfo(),
-                    #'SectionInfo': SectionInfo(),
+                    'SectionInfo': SectionInfo(),
                     'ImportsInfo': ImportsInfo(),
                     'ExportsInfo': ExportsInfo()
             }
