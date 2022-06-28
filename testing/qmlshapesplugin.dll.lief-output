@@ -1,0 +1,2326 @@
+{
+  "customFields": {
+    "entry_point": "",
+    "has_debug": false,
+    "has_relocations": true,
+    "has_resources": true,
+    "has_signatures": false,
+    "has_tls": true,
+    "header_characteristics": [
+      "EXECUTABLE_IMAGE",
+      "LINE_NUMS_STRIPPED",
+      "LOCAL_SYMS_STRIPPED",
+      "CHARA_32BIT_MACHINE",
+      "DEBUG_STRIPPED",
+      "DLL"
+    ],
+    "optional_header_characteristics": [
+      "DYNAMIC_BASE",
+      "NX_COMPAT"
+    ],
+    "size": 15872
+  },
+  "data_directories": [
+    {
+      "RVA": 28672,
+      "section": ".edata",
+      "size": 124,
+      "type": "EXPORT_TABLE"
+    },
+    {
+      "RVA": 32768,
+      "section": ".idata",
+      "size": 2240,
+      "type": "IMPORT_TABLE"
+    },
+    {
+      "RVA": 45056,
+      "section": ".rsrc",
+      "size": 840,
+      "type": "RESOURCE_TABLE"
+    },
+    {
+      "RVA": 0,
+      "size": 0,
+      "type": "EXCEPTION_TABLE"
+    },
+    {
+      "RVA": 0,
+      "size": 0,
+      "type": "CERTIFICATE_TABLE"
+    },
+    {
+      "RVA": 49152,
+      "section": ".reloc",
+      "size": 608,
+      "type": "BASE_RELOCATION_TABLE"
+    },
+    {
+      "RVA": 0,
+      "size": 0,
+      "type": "DEBUG"
+    },
+    {
+      "RVA": 0,
+      "size": 0,
+      "type": "ARCHITECTURE"
+    },
+    {
+      "RVA": 0,
+      "size": 0,
+      "type": "GLOBAL_PTR"
+    },
+    {
+      "RVA": 16484,
+      "section": ".rdata",
+      "size": 24,
+      "type": "TLS_TABLE"
+    },
+    {
+      "RVA": 0,
+      "size": 0,
+      "type": "LOAD_CONFIG_TABLE"
+    },
+    {
+      "RVA": 0,
+      "size": 0,
+      "type": "BOUND_IMPORT"
+    },
+    {
+      "RVA": 33128,
+      "section": ".idata",
+      "size": 220,
+      "type": "IAT"
+    },
+    {
+      "RVA": 0,
+      "size": 0,
+      "type": "DELAY_IMPORT_DESCRIPTOR"
+    },
+    {
+      "RVA": 0,
+      "size": 0,
+      "type": "CLR_RUNTIME_HEADER"
+    },
+    {
+      "RVA": 0,
+      "size": 0,
+      "type": "RESERVED"
+    }
+  ],
+  "dos_header": {
+    "addressof_new_exeheader": 128,
+    "addressof_relocation_table": 64,
+    "checksum": 0,
+    "file_size_in_pages": 3,
+    "header_size_in_paragraphs": 4,
+    "initial_ip": 0,
+    "initial_relative_cs": 0,
+    "initial_relative_ss": 0,
+    "initial_sp": 184,
+    "magic": 23117,
+    "maximum_extra_paragraphs": 65535,
+    "minimum_extra_paragraphs": 0,
+    "numberof_relocation": 0,
+    "oem_id": 0,
+    "oem_info": 0,
+    "overlay_number": 0,
+    "reserved": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "reserved2": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "used_bytes_in_the_last_page": 144
+  },
+  "entrypoint": 1654395824,
+  "export": {
+    "entries": [
+      {
+        "address": 5296,
+        "is_extern": false,
+        "name": "qt_plugin_instance",
+        "ordinal": 1
+      },
+      {
+        "address": 5280,
+        "is_extern": false,
+        "name": "qt_plugin_query_metadata",
+        "ordinal": 2
+      }
+    ],
+    "export_flags": 0,
+    "major_version": 0,
+    "minor_version": 0,
+    "name": "qmlshapesplugin.dll",
+    "ordinal_base": 1,
+    "timestamp": 1652737143
+  },
+  "header": {
+    "characteristics": 8974,
+    "machine": "I386",
+    "numberof_sections": 11,
+    "numberof_symbols": 0,
+    "pointerto_symbol_table": 0,
+    "signature": [
+      80,
+      69,
+      0,
+      0
+    ],
+    "sizeof_optional_header": 224,
+    "time_date_stamp": 1652737143
+  },
+  "imports": [
+    {
+      "entries": [
+        {
+          "data": 33348,
+          "hint": 778,
+          "iat_address": 33128,
+          "name": "_ZN19QQmlExtensionPlugin11qt_metacallEN11QMetaObject4CallEiPPv"
+        },
+        {
+          "data": 33416,
+          "hint": 779,
+          "iat_address": 33132,
+          "name": "_ZN19QQmlExtensionPlugin11qt_metacastEPKc"
+        },
+        {
+          "data": 33460,
+          "hint": 780,
+          "iat_address": 33136,
+          "name": "_ZN19QQmlExtensionPlugin16initializeEngineEP10QQmlEnginePKc"
+        },
+        {
+          "data": 33524,
+          "hint": 781,
+          "iat_address": 33140,
+          "name": "_ZN19QQmlExtensionPlugin16staticMetaObjectE"
+        },
+        {
+          "data": 33572,
+          "hint": 784,
+          "iat_address": 33144,
+          "name": "_ZN19QQmlExtensionPluginC2EP7QObject"
+        },
+        {
+          "data": 33612,
+          "hint": 787,
+          "iat_address": 33148,
+          "name": "_ZN19QQmlExtensionPluginD2Ev"
+        },
+        {
+          "data": 33644,
+          "hint": 3402,
+          "iat_address": 33152,
+          "name": "_ZThn8_N19QQmlExtensionPlugin16initializeEngineEP10QQmlEnginePKc"
+        }
+      ],
+      "forwarder_chain": 0,
+      "import_address_table_rva": 33128,
+      "import_lookup_table_rva": 32908,
+      "name": "Qt5Qml.dll",
+      "timedatestamp": 0
+    },
+    {
+      "entries": [
+        {
+          "data": 33712,
+          "hint": 1,
+          "iat_address": 33160,
+          "name": "_Z33qml_register_types_QtQuick_Shapesv"
+        },
+        {
+          "data": 33756,
+          "hint": 57,
+          "iat_address": 33164,
+          "name": "_ZN18QQuickShapesModule12defineModuleEv"
+        }
+      ],
+      "forwarder_chain": 0,
+      "import_address_table_rva": 33160,
+      "import_lookup_table_rva": 32940,
+      "name": "Qt5QuickShapes.dll",
+      "timedatestamp": 0
+    },
+    {
+      "entries": [
+        {
+          "data": 33800,
+          "hint": 1264,
+          "iat_address": 33172,
+          "name": "_ZN15QtSharedPointer20ExternalRefCountData9getAndRefEPK7QObject"
+        },
+        {
+          "data": 33868,
+          "hint": 3148,
+          "iat_address": 33176,
+          "name": "_ZN7QObject10childEventEP11QChildEvent"
+        },
+        {
+          "data": 33912,
+          "hint": 3153,
+          "iat_address": 33180,
+          "name": "_ZN7QObject10timerEventEP11QTimerEvent"
+        },
+        {
+          "data": 33956,
+          "hint": 3155,
+          "iat_address": 33184,
+          "name": "_ZN7QObject11customEventEP6QEvent"
+        },
+        {
+          "data": 33992,
+          "hint": 3157,
+          "iat_address": 33188,
+          "name": "_ZN7QObject11eventFilterEPS_P6QEvent"
+        },
+        {
+          "data": 34032,
+          "hint": 3164,
+          "iat_address": 33192,
+          "name": "_ZN7QObject13connectNotifyERK11QMetaMethod"
+        },
+        {
+          "data": 34080,
+          "hint": 3169,
+          "iat_address": 33196,
+          "name": "_ZN7QObject16disconnectNotifyERK11QMetaMethod"
+        },
+        {
+          "data": 34128,
+          "hint": 3177,
+          "iat_address": 33200,
+          "name": "_ZN7QObject5eventEP6QEvent"
+        },
+        {
+          "data": 34160,
+          "hint": 4302,
+          "iat_address": 33204,
+          "name": "_ZNK11QObjectData17dynamicMetaObjectEv"
+        }
+      ],
+      "forwarder_chain": 0,
+      "import_address_table_rva": 33172,
+      "import_lookup_table_rva": 32952,
+      "name": "Qt5Core.dll",
+      "timedatestamp": 0
+    },
+    {
+      "entries": [
+        {
+          "data": 34204,
+          "hint": 277,
+          "iat_address": 33212,
+          "name": "DeleteCriticalSection"
+        },
+        {
+          "data": 34228,
+          "hint": 310,
+          "iat_address": 33216,
+          "name": "EnterCriticalSection"
+        },
+        {
+          "data": 34252,
+          "hint": 617,
+          "iat_address": 33220,
+          "name": "GetLastError"
+        },
+        {
+          "data": 34268,
+          "hint": 877,
+          "iat_address": 33224,
+          "name": "InitializeCriticalSection"
+        },
+        {
+          "data": 34296,
+          "hint": 973,
+          "iat_address": 33228,
+          "name": "LeaveCriticalSection"
+        },
+        {
+          "data": 34320,
+          "hint": 1386,
+          "iat_address": 33232,
+          "name": "Sleep"
+        },
+        {
+          "data": 34328,
+          "hint": 1421,
+          "iat_address": 33236,
+          "name": "TlsGetValue"
+        },
+        {
+          "data": 34342,
+          "hint": 1469,
+          "iat_address": 33240,
+          "name": "VirtualProtect"
+        },
+        {
+          "data": 34360,
+          "hint": 1472,
+          "iat_address": 33244,
+          "name": "VirtualQuery"
+        }
+      ],
+      "forwarder_chain": 0,
+      "import_address_table_rva": 33212,
+      "import_lookup_table_rva": 32992,
+      "name": "KERNEL32.dll",
+      "timedatestamp": 0
+    },
+    {
+      "entries": [
+        {
+          "data": 34376,
+          "hint": 142,
+          "iat_address": 33252,
+          "name": "_amsg_exit"
+        },
+        {
+          "data": 34390,
+          "hint": 338,
+          "iat_address": 33256,
+          "name": "_initterm"
+        },
+        {
+          "data": 34402,
+          "hint": 342,
+          "iat_address": 33260,
+          "name": "_iob"
+        },
+        {
+          "data": 34410,
+          "hint": 441,
+          "iat_address": 33264,
+          "name": "_lock"
+        },
+        {
+          "data": 34418,
+          "hint": 737,
+          "iat_address": 33268,
+          "name": "_unlock"
+        },
+        {
+          "data": 34428,
+          "hint": 922,
+          "iat_address": 33272,
+          "name": "abort"
+        },
+        {
+          "data": 34436,
+          "hint": 935,
+          "iat_address": 33276,
+          "name": "calloc"
+        },
+        {
+          "data": 34446,
+          "hint": 969,
+          "iat_address": 33280,
+          "name": "free"
+        },
+        {
+          "data": 34454,
+          "hint": 982,
+          "iat_address": 33284,
+          "name": "fwrite"
+        },
+        {
+          "data": 34464,
+          "hint": 1054,
+          "iat_address": 33288,
+          "name": "realloc"
+        },
+        {
+          "data": 34474,
+          "hint": 1077,
+          "iat_address": 33292,
+          "name": "strcmp"
+        },
+        {
+          "data": 34484,
+          "hint": 1084,
+          "iat_address": 33296,
+          "name": "strlen"
+        },
+        {
+          "data": 34494,
+          "hint": 1087,
+          "iat_address": 33300,
+          "name": "strncmp"
+        },
+        {
+          "data": 34504,
+          "hint": 1121,
+          "iat_address": 33304,
+          "name": "vfprintf"
+        }
+      ],
+      "forwarder_chain": 0,
+      "import_address_table_rva": 33252,
+      "import_lookup_table_rva": 33032,
+      "name": "msvcrt.dll",
+      "timedatestamp": 0
+    },
+    {
+      "entries": [
+        {
+          "data": 34516,
+          "hint": 4957,
+          "iat_address": 33312,
+          "name": "_ZTVN10__cxxabiv117__class_type_infoE"
+        },
+        {
+          "data": 34556,
+          "hint": 4961,
+          "iat_address": 33316,
+          "name": "_ZTVN10__cxxabiv120__si_class_type_infoE"
+        },
+        {
+          "data": 34600,
+          "hint": 4962,
+          "iat_address": 33320,
+          "name": "_ZTVN10__cxxabiv121__vmi_class_type_infoE"
+        },
+        {
+          "data": 34644,
+          "hint": 5203,
+          "iat_address": 33324,
+          "name": "_ZdlPv"
+        },
+        {
+          "data": 34656,
+          "hint": 5207,
+          "iat_address": 33328,
+          "name": "_ZdlPvj"
+        },
+        {
+          "data": 34668,
+          "hint": 5213,
+          "iat_address": 33332,
+          "name": "_Znwj"
+        },
+        {
+          "data": 34676,
+          "hint": 5235,
+          "iat_address": 33336,
+          "name": "__cxa_guard_acquire"
+        },
+        {
+          "data": 34700,
+          "hint": 5236,
+          "iat_address": 33340,
+          "name": "__cxa_guard_release"
+        }
+      ],
+      "forwarder_chain": 0,
+      "import_address_table_rva": 33312,
+      "import_lookup_table_rva": 33092,
+      "name": "libstdc++-6.dll",
+      "timedatestamp": 0
+    }
+  ],
+  "name": "qmlshapesplugin.dll",
+  "optional_header": {
+    "addressof_entrypoint": 5040,
+    "baseof_code": 4096,
+    "baseof_data": 12288,
+    "checksum": 71318,
+    "dll_characteristics": 320,
+    "file_alignment": 512,
+    "imagebase": 1654390784,
+    "loader_flags": 0,
+    "magic": "PE32",
+    "major_image_version": 1,
+    "major_linker_version": 2,
+    "major_operating_system_version": 4,
+    "major_subsystem_version": 4,
+    "minor_image_version": 0,
+    "minor_linker_version": 38,
+    "minor_operating_system_version": 0,
+    "minor_subsystem_version": 0,
+    "numberof_rva_and_size": 16,
+    "section_alignment": 4096,
+    "sizeof_code": 6144,
+    "sizeof_headers": 1024,
+    "sizeof_heap_commit": 4096,
+    "sizeof_heap_reserve": 1048576,
+    "sizeof_image": 53248,
+    "sizeof_initialized_data": 14848,
+    "sizeof_stack_commit": 4096,
+    "sizeof_stack_reserve": 2097152,
+    "sizeof_uninitialized_data": 512,
+    "subsystem": "WINDOWS_GUI",
+    "win32_version_value": 0
+  },
+  "relocations": [
+    {
+      "block_size": 332,
+      "entries": [
+        {
+          "data": 12294,
+          "position": 6,
+          "type": "HIGHLOW"
+        },
+        {
+          "data": 12336,
+          "position": 48,
+          "type": "HIGHLOW"
+        },
+        {
+          "data": 12356,
+          "position": 68,
+          "type": "HIGHLOW"
+        },
+        {
+          "data": 12377,
+          "position": 89,
+          "type": "HIGHLOW"
+        },
+        {
+          "data": 12390,
+          "position": 102,
+          "type": "HIGHLOW"
+        },
+        {
+          "data": 12401,
+          "position": 113,
+          "type": "HIGHLOW"
+        },
+        {
+          "data": 12470,
+          "position": 182,
+          "type": "HIGHLOW"
+        },
+        {
+          "data": 12506,
+          "position": 218,
+          "type": "HIGHLOW"
+        },
+        {
+          "data": 12517,
+          "position": 229,
+          "type": "HIGHLOW"
+        },
+        {
+          "data": 12531,
+          "position": 243,
+          "type": "HIGHLOW"
+        },
+        {
+          "data": 12544,
+          "position": 256,
+          "type": "HIGHLOW"
+        },
+        {
+          "data": 12566,
+          "position": 278,
+          "type": "HIGHLOW"
+        },
+        {
+          "data": 12604,
+          "position": 316,
+          "type": "HIGHLOW"
+        },
+        {
+          "data": 12643,
+          "position": 355,
+          "type": "HIGHLOW"
+        },
+        {
+          "data": 12654,
+          "position": 366,
+          "type": "HIGHLOW"
+        },
+        {
+          "data": 12664,
+          "position": 376,
+          "type": "HIGHLOW"
+        },
+        {
+          "data": 12706,
+          "position": 418,
+          "type": "HIGHLOW"
+        },
+        {
+          "data": 12724,
+          "position": 436,
+          "type": "HIGHLOW"
+        },
+        {
+          "data": 12731,
+          "position": 443,
+          "type": "HIGHLOW"
+        },
+        {
+          "data": 12737,
+          "position": 449,
+          "type": "HIGHLOW"
+        },
+        {
+          "data": 12759,
+          "position": 471,
+          "type": "HIGHLOW"
+        },
+        {
+          "data": 12766,
+          "position": 478,
+          "type": "HIGHLOW"
+        },
+        {
+          "data": 12777,
+          "position": 489,
+          "type": "HIGHLOW"
+        },
+        {
+          "data": 12847,
+          "position": 559,
+          "type": "HIGHLOW"
+        },
+        {
+          "data": 12856,
+          "position": 568,
+          "type": "HIGHLOW"
+        },
+        {
+          "data": 12940,
+          "position": 652,
+          "type": "HIGHLOW"
+        },
+        {
+          "data": 13237,
+          "position": 949,
+          "type": "HIGHLOW"
+        },
+        {
+          "data": 13290,
+          "position": 1002,
+          "type": "HIGHLOW"
+        },
+        {
+          "data": 13321,
+          "position": 1033,
+          "type": "HIGHLOW"
+        },
+        {
+          "data": 13388,
+          "position": 1100,
+          "type": "HIGHLOW"
+        },
+        {
+          "data": 13393,
+          "position": 1105,
+          "type": "HIGHLOW"
+        },
+        {
+          "data": 13409,
+          "position": 1121,
+          "type": "HIGHLOW"
+        },
+        {
+          "data": 13424,
+          "position": 1136,
+          "type": "HIGHLOW"
+        },
+        {
+          "data": 13473,
+          "position": 1185,
+          "type": "HIGHLOW"
+        },
+        {
+          "data": 13495,
+          "position": 1207,
+          "type": "HIGHLOW"
+        },
+        {
+          "data": 13508,
+          "position": 1220,
+          "type": "HIGHLOW"
+        },
+        {
+          "data": 13525,
+          "position": 1237,
+          "type": "HIGHLOW"
+        },
+        {
+          "data": 13553,
+          "position": 1265,
+          "type": "HIGHLOW"
+        },
+        {
+          "data": 13593,
+          "position": 1305,
+          "type": "HIGHLOW"
+        },
+        {
+          "data": 13598,
+          "position": 1310,
+          "type": "HIGHLOW"
+        },
+        {
+          "data": 13604,
+          "position": 1316,
+          "type": "HIGHLOW"
+        },
+        {
+          "data": 13614,
+          "position": 1326,
+          "type": "HIGHLOW"
+        },
+        {
+          "data": 13631,
+          "position": 1343,
+          "type": "HIGHLOW"
+        },
+        {
+          "data": 13637,
+          "position": 1349,
+          "type": "HIGHLOW"
+        },
+        {
+          "data": 13643,
+          "position": 1355,
+          "type": "HIGHLOW"
+        },
+        {
+          "data": 13648,
+          "position": 1360,
+          "type": "HIGHLOW"
+        },
+        {
+          "data": 13671,
+          "position": 1383,
+          "type": "HIGHLOW"
+        },
+        {
+          "data": 13699,
+          "position": 1411,
+          "type": "HIGHLOW"
+        },
+        {
+          "data": 13719,
+          "position": 1431,
+          "type": "HIGHLOW"
+        },
+        {
+          "data": 13725,
+          "position": 1437,
+          "type": "HIGHLOW"
+        },
+        {
+          "data": 13735,
+          "position": 1447,
+          "type": "HIGHLOW"
+        },
+        {
+          "data": 13751,
+          "position": 1463,
+          "type": "HIGHLOW"
+        },
+        {
+          "data": 13792,
+          "position": 1504,
+          "type": "HIGHLOW"
+        },
+        {
+          "data": 13832,
+          "position": 1544,
+          "type": "HIGHLOW"
+        },
+        {
+          "data": 13858,
+          "position": 1570,
+          "type": "HIGHLOW"
+        },
+        {
+          "data": 13874,
+          "position": 1586,
+          "type": "HIGHLOW"
+        },
+        {
+          "data": 13882,
+          "position": 1594,
+          "type": "HIGHLOW"
+        },
+        {
+          "data": 13890,
+          "position": 1602,
+          "type": "HIGHLOW"
+        },
+        {
+          "data": 13898,
+          "position": 1610,
+          "type": "HIGHLOW"
+        },
+        {
+          "data": 13906,
+          "position": 1618,
+          "type": "HIGHLOW"
+        },
+        {
+          "data": 13914,
+          "position": 1626,
+          "type": "HIGHLOW"
+        },
+        {
+          "data": 13922,
+          "position": 1634,
+          "type": "HIGHLOW"
+        },
+        {
+          "data": 13930,
+          "position": 1642,
+          "type": "HIGHLOW"
+        },
+        {
+          "data": 13938,
+          "position": 1650,
+          "type": "HIGHLOW"
+        },
+        {
+          "data": 13946,
+          "position": 1658,
+          "type": "HIGHLOW"
+        },
+        {
+          "data": 13954,
+          "position": 1666,
+          "type": "HIGHLOW"
+        },
+        {
+          "data": 13962,
+          "position": 1674,
+          "type": "HIGHLOW"
+        },
+        {
+          "data": 13970,
+          "position": 1682,
+          "type": "HIGHLOW"
+        },
+        {
+          "data": 13978,
+          "position": 1690,
+          "type": "HIGHLOW"
+        },
+        {
+          "data": 13985,
+          "position": 1697,
+          "type": "HIGHLOW"
+        },
+        {
+          "data": 14003,
+          "position": 1715,
+          "type": "HIGHLOW"
+        },
+        {
+          "data": 14015,
+          "position": 1727,
+          "type": "HIGHLOW"
+        },
+        {
+          "data": 14054,
+          "position": 1766,
+          "type": "HIGHLOW"
+        },
+        {
+          "data": 14070,
+          "position": 1782,
+          "type": "HIGHLOW"
+        },
+        {
+          "data": 14082,
+          "position": 1794,
+          "type": "HIGHLOW"
+        },
+        {
+          "data": 14108,
+          "position": 1820,
+          "type": "HIGHLOW"
+        },
+        {
+          "data": 14129,
+          "position": 1841,
+          "type": "HIGHLOW"
+        },
+        {
+          "data": 14146,
+          "position": 1858,
+          "type": "HIGHLOW"
+        },
+        {
+          "data": 14247,
+          "position": 1959,
+          "type": "HIGHLOW"
+        },
+        {
+          "data": 14260,
+          "position": 1972,
+          "type": "HIGHLOW"
+        },
+        {
+          "data": 14292,
+          "position": 2004,
+          "type": "HIGHLOW"
+        },
+        {
+          "data": 14297,
+          "position": 2009,
+          "type": "HIGHLOW"
+        },
+        {
+          "data": 14443,
+          "position": 2155,
+          "type": "HIGHLOW"
+        },
+        {
+          "data": 14504,
+          "position": 2216,
+          "type": "HIGHLOW"
+        },
+        {
+          "data": 14518,
+          "position": 2230,
+          "type": "HIGHLOW"
+        },
+        {
+          "data": 14579,
+          "position": 2291,
+          "type": "HIGHLOW"
+        },
+        {
+          "data": 14607,
+          "position": 2319,
+          "type": "HIGHLOW"
+        },
+        {
+          "data": 14639,
+          "position": 2351,
+          "type": "HIGHLOW"
+        },
+        {
+          "data": 14676,
+          "position": 2388,
+          "type": "HIGHLOW"
+        },
+        {
+          "data": 14714,
+          "position": 2426,
+          "type": "HIGHLOW"
+        },
+        {
+          "data": 14741,
+          "position": 2453,
+          "type": "HIGHLOW"
+        },
+        {
+          "data": 14754,
+          "position": 2466,
+          "type": "HIGHLOW"
+        },
+        {
+          "data": 14761,
+          "position": 2473,
+          "type": "HIGHLOW"
+        },
+        {
+          "data": 14792,
+          "position": 2504,
+          "type": "HIGHLOW"
+        },
+        {
+          "data": 14810,
+          "position": 2522,
+          "type": "HIGHLOW"
+        },
+        {
+          "data": 14830,
+          "position": 2542,
+          "type": "HIGHLOW"
+        },
+        {
+          "data": 14858,
+          "position": 2570,
+          "type": "HIGHLOW"
+        },
+        {
+          "data": 14882,
+          "position": 2594,
+          "type": "HIGHLOW"
+        },
+        {
+          "data": 14918,
+          "position": 2630,
+          "type": "HIGHLOW"
+        },
+        {
+          "data": 14936,
+          "position": 2648,
+          "type": "HIGHLOW"
+        },
+        {
+          "data": 14941,
+          "position": 2653,
+          "type": "HIGHLOW"
+        },
+        {
+          "data": 14946,
+          "position": 2658,
+          "type": "HIGHLOW"
+        },
+        {
+          "data": 14957,
+          "position": 2669,
+          "type": "HIGHLOW"
+        },
+        {
+          "data": 14971,
+          "position": 2683,
+          "type": "HIGHLOW"
+        },
+        {
+          "data": 15011,
+          "position": 2723,
+          "type": "HIGHLOW"
+        },
+        {
+          "data": 15031,
+          "position": 2743,
+          "type": "HIGHLOW"
+        },
+        {
+          "data": 15037,
+          "position": 2749,
+          "type": "HIGHLOW"
+        },
+        {
+          "data": 15043,
+          "position": 2755,
+          "type": "HIGHLOW"
+        },
+        {
+          "data": 15123,
+          "position": 2835,
+          "type": "HIGHLOW"
+        },
+        {
+          "data": 15145,
+          "position": 2857,
+          "type": "HIGHLOW"
+        },
+        {
+          "data": 15153,
+          "position": 2865,
+          "type": "HIGHLOW"
+        },
+        {
+          "data": 15165,
+          "position": 2877,
+          "type": "HIGHLOW"
+        },
+        {
+          "data": 15170,
+          "position": 2882,
+          "type": "HIGHLOW"
+        },
+        {
+          "data": 15199,
+          "position": 2911,
+          "type": "HIGHLOW"
+        },
+        {
+          "data": 15219,
+          "position": 2931,
+          "type": "HIGHLOW"
+        },
+        {
+          "data": 15286,
+          "position": 2998,
+          "type": "HIGHLOW"
+        },
+        {
+          "data": 15297,
+          "position": 3009,
+          "type": "HIGHLOW"
+        },
+        {
+          "data": 15311,
+          "position": 3023,
+          "type": "HIGHLOW"
+        },
+        {
+          "data": 15330,
+          "position": 3042,
+          "type": "HIGHLOW"
+        },
+        {
+          "data": 15377,
+          "position": 3089,
+          "type": "HIGHLOW"
+        },
+        {
+          "data": 15473,
+          "position": 3185,
+          "type": "HIGHLOW"
+        },
+        {
+          "data": 15479,
+          "position": 3191,
+          "type": "HIGHLOW"
+        },
+        {
+          "data": 15499,
+          "position": 3211,
+          "type": "HIGHLOW"
+        },
+        {
+          "data": 15505,
+          "position": 3217,
+          "type": "HIGHLOW"
+        },
+        {
+          "data": 15516,
+          "position": 3228,
+          "type": "HIGHLOW"
+        },
+        {
+          "data": 15522,
+          "position": 3234,
+          "type": "HIGHLOW"
+        },
+        {
+          "data": 15537,
+          "position": 3249,
+          "type": "HIGHLOW"
+        },
+        {
+          "data": 15553,
+          "position": 3265,
+          "type": "HIGHLOW"
+        },
+        {
+          "data": 15578,
+          "position": 3290,
+          "type": "HIGHLOW"
+        },
+        {
+          "data": 15584,
+          "position": 3296,
+          "type": "HIGHLOW"
+        },
+        {
+          "data": 15590,
+          "position": 3302,
+          "type": "HIGHLOW"
+        },
+        {
+          "data": 15603,
+          "position": 3315,
+          "type": "HIGHLOW"
+        },
+        {
+          "data": 15609,
+          "position": 3321,
+          "type": "HIGHLOW"
+        },
+        {
+          "data": 15656,
+          "position": 3368,
+          "type": "HIGHLOW"
+        },
+        {
+          "data": 15662,
+          "position": 3374,
+          "type": "HIGHLOW"
+        },
+        {
+          "data": 15681,
+          "position": 3393,
+          "type": "HIGHLOW"
+        },
+        {
+          "data": 15733,
+          "position": 3445,
+          "type": "HIGHLOW"
+        },
+        {
+          "data": 15748,
+          "position": 3460,
+          "type": "HIGHLOW"
+        },
+        {
+          "data": 15753,
+          "position": 3465,
+          "type": "HIGHLOW"
+        },
+        {
+          "data": 15759,
+          "position": 3471,
+          "type": "HIGHLOW"
+        },
+        {
+          "data": 15772,
+          "position": 3484,
+          "type": "HIGHLOW"
+        },
+        {
+          "data": 15778,
+          "position": 3490,
+          "type": "HIGHLOW"
+        },
+        {
+          "data": 15813,
+          "position": 3525,
+          "type": "HIGHLOW"
+        },
+        {
+          "data": 15843,
+          "position": 3555,
+          "type": "HIGHLOW"
+        },
+        {
+          "data": 15849,
+          "position": 3561,
+          "type": "HIGHLOW"
+        },
+        {
+          "data": 15855,
+          "position": 3567,
+          "type": "HIGHLOW"
+        },
+        {
+          "data": 15892,
+          "position": 3604,
+          "type": "HIGHLOW"
+        },
+        {
+          "data": 15898,
+          "position": 3610,
+          "type": "HIGHLOW"
+        },
+        {
+          "data": 15940,
+          "position": 3652,
+          "type": "HIGHLOW"
+        },
+        {
+          "data": 15984,
+          "position": 3696,
+          "type": "HIGHLOW"
+        },
+        {
+          "data": 16033,
+          "position": 3745,
+          "type": "HIGHLOW"
+        },
+        {
+          "data": 16042,
+          "position": 3754,
+          "type": "HIGHLOW"
+        },
+        {
+          "data": 16052,
+          "position": 3764,
+          "type": "HIGHLOW"
+        },
+        {
+          "data": 16083,
+          "position": 3795,
+          "type": "HIGHLOW"
+        },
+        {
+          "data": 16093,
+          "position": 3805,
+          "type": "HIGHLOW"
+        },
+        {
+          "data": 16104,
+          "position": 3816,
+          "type": "HIGHLOW"
+        },
+        {
+          "data": 16110,
+          "position": 3822,
+          "type": "HIGHLOW"
+        },
+        {
+          "data": 16129,
+          "position": 3841,
+          "type": "HIGHLOW"
+        },
+        {
+          "data": 16139,
+          "position": 3851,
+          "type": "HIGHLOW"
+        },
+        {
+          "data": 16195,
+          "position": 3907,
+          "type": "HIGHLOW"
+        },
+        {
+          "data": 16201,
+          "position": 3913,
+          "type": "HIGHLOW"
+        },
+        {
+          "data": 0,
+          "position": 0,
+          "type": "ABSOLUTE"
+        }
+      ],
+      "virtual_address": 4096
+    },
+    {
+      "block_size": 148,
+      "entries": [
+        {
+          "data": 12301,
+          "position": 13,
+          "type": "HIGHLOW"
+        },
+        {
+          "data": 12310,
+          "position": 22,
+          "type": "HIGHLOW"
+        },
+        {
+          "data": 12324,
+          "position": 36,
+          "type": "HIGHLOW"
+        },
+        {
+          "data": 12331,
+          "position": 43,
+          "type": "HIGHLOW"
+        },
+        {
+          "data": 12336,
+          "position": 48,
+          "type": "HIGHLOW"
+        },
+        {
+          "data": 12421,
+          "position": 133,
+          "type": "HIGHLOW"
+        },
+        {
+          "data": 12431,
+          "position": 143,
+          "type": "HIGHLOW"
+        },
+        {
+          "data": 12446,
+          "position": 158,
+          "type": "HIGHLOW"
+        },
+        {
+          "data": 12457,
+          "position": 169,
+          "type": "HIGHLOW"
+        },
+        {
+          "data": 12462,
+          "position": 174,
+          "type": "HIGHLOW"
+        },
+        {
+          "data": 12468,
+          "position": 180,
+          "type": "HIGHLOW"
+        },
+        {
+          "data": 12549,
+          "position": 261,
+          "type": "HIGHLOW"
+        },
+        {
+          "data": 12558,
+          "position": 270,
+          "type": "HIGHLOW"
+        },
+        {
+          "data": 12572,
+          "position": 284,
+          "type": "HIGHLOW"
+        },
+        {
+          "data": 12579,
+          "position": 291,
+          "type": "HIGHLOW"
+        },
+        {
+          "data": 12602,
+          "position": 314,
+          "type": "HIGHLOW"
+        },
+        {
+          "data": 12611,
+          "position": 323,
+          "type": "HIGHLOW"
+        },
+        {
+          "data": 12625,
+          "position": 337,
+          "type": "HIGHLOW"
+        },
+        {
+          "data": 12632,
+          "position": 344,
+          "type": "HIGHLOW"
+        },
+        {
+          "data": 12637,
+          "position": 349,
+          "type": "HIGHLOW"
+        },
+        {
+          "data": 12693,
+          "position": 405,
+          "type": "HIGHLOW"
+        },
+        {
+          "data": 12702,
+          "position": 414,
+          "type": "HIGHLOW"
+        },
+        {
+          "data": 12714,
+          "position": 426,
+          "type": "HIGHLOW"
+        },
+        {
+          "data": 12741,
+          "position": 453,
+          "type": "HIGHLOW"
+        },
+        {
+          "data": 12751,
+          "position": 463,
+          "type": "HIGHLOW"
+        },
+        {
+          "data": 12766,
+          "position": 478,
+          "type": "HIGHLOW"
+        },
+        {
+          "data": 12776,
+          "position": 488,
+          "type": "HIGHLOW"
+        },
+        {
+          "data": 12783,
+          "position": 495,
+          "type": "HIGHLOW"
+        },
+        {
+          "data": 12789,
+          "position": 501,
+          "type": "HIGHLOW"
+        },
+        {
+          "data": 12870,
+          "position": 582,
+          "type": "HIGHLOW"
+        },
+        {
+          "data": 12885,
+          "position": 597,
+          "type": "HIGHLOW"
+        },
+        {
+          "data": 12899,
+          "position": 611,
+          "type": "HIGHLOW"
+        },
+        {
+          "data": 12905,
+          "position": 617,
+          "type": "HIGHLOW"
+        },
+        {
+          "data": 12911,
+          "position": 623,
+          "type": "HIGHLOW"
+        },
+        {
+          "data": 12922,
+          "position": 634,
+          "type": "HIGHLOW"
+        },
+        {
+          "data": 12978,
+          "position": 690,
+          "type": "HIGHLOW"
+        },
+        {
+          "data": 13024,
+          "position": 736,
+          "type": "HIGHLOW"
+        },
+        {
+          "data": 13145,
+          "position": 857,
+          "type": "HIGHLOW"
+        },
+        {
+          "data": 13522,
+          "position": 1234,
+          "type": "HIGHLOW"
+        },
+        {
+          "data": 13530,
+          "position": 1242,
+          "type": "HIGHLOW"
+        },
+        {
+          "data": 13538,
+          "position": 1250,
+          "type": "HIGHLOW"
+        },
+        {
+          "data": 13546,
+          "position": 1258,
+          "type": "HIGHLOW"
+        },
+        {
+          "data": 13554,
+          "position": 1266,
+          "type": "HIGHLOW"
+        },
+        {
+          "data": 13562,
+          "position": 1274,
+          "type": "HIGHLOW"
+        },
+        {
+          "data": 13570,
+          "position": 1282,
+          "type": "HIGHLOW"
+        },
+        {
+          "data": 13578,
+          "position": 1290,
+          "type": "HIGHLOW"
+        },
+        {
+          "data": 13586,
+          "position": 1298,
+          "type": "HIGHLOW"
+        },
+        {
+          "data": 13594,
+          "position": 1306,
+          "type": "HIGHLOW"
+        },
+        {
+          "data": 13602,
+          "position": 1314,
+          "type": "HIGHLOW"
+        },
+        {
+          "data": 13610,
+          "position": 1322,
+          "type": "HIGHLOW"
+        },
+        {
+          "data": 13618,
+          "position": 1330,
+          "type": "HIGHLOW"
+        },
+        {
+          "data": 13637,
+          "position": 1349,
+          "type": "HIGHLOW"
+        },
+        {
+          "data": 13656,
+          "position": 1368,
+          "type": "HIGHLOW"
+        },
+        {
+          "data": 13663,
+          "position": 1375,
+          "type": "HIGHLOW"
+        },
+        {
+          "data": 13669,
+          "position": 1381,
+          "type": "HIGHLOW"
+        },
+        {
+          "data": 13698,
+          "position": 1410,
+          "type": "HIGHLOW"
+        },
+        {
+          "data": 13705,
+          "position": 1417,
+          "type": "HIGHLOW"
+        },
+        {
+          "data": 13711,
+          "position": 1423,
+          "type": "HIGHLOW"
+        },
+        {
+          "data": 13733,
+          "position": 1445,
+          "type": "HIGHLOW"
+        },
+        {
+          "data": 13754,
+          "position": 1466,
+          "type": "HIGHLOW"
+        },
+        {
+          "data": 13760,
+          "position": 1472,
+          "type": "HIGHLOW"
+        },
+        {
+          "data": 13768,
+          "position": 1480,
+          "type": "HIGHLOW"
+        },
+        {
+          "data": 13811,
+          "position": 1523,
+          "type": "HIGHLOW"
+        },
+        {
+          "data": 13821,
+          "position": 1533,
+          "type": "HIGHLOW"
+        },
+        {
+          "data": 13827,
+          "position": 1539,
+          "type": "HIGHLOW"
+        },
+        {
+          "data": 13841,
+          "position": 1553,
+          "type": "HIGHLOW"
+        },
+        {
+          "data": 13846,
+          "position": 1558,
+          "type": "HIGHLOW"
+        },
+        {
+          "data": 13876,
+          "position": 1588,
+          "type": "HIGHLOW"
+        },
+        {
+          "data": 13880,
+          "position": 1592,
+          "type": "HIGHLOW"
+        },
+        {
+          "data": 0,
+          "position": 0,
+          "type": "ABSOLUTE"
+        }
+      ],
+      "virtual_address": 8192
+    },
+    {
+      "block_size": 24,
+      "entries": [
+        {
+          "data": 12296,
+          "position": 8,
+          "type": "HIGHLOW"
+        },
+        {
+          "data": 12300,
+          "position": 12,
+          "type": "HIGHLOW"
+        },
+        {
+          "data": 12304,
+          "position": 16,
+          "type": "HIGHLOW"
+        },
+        {
+          "data": 12316,
+          "position": 28,
+          "type": "HIGHLOW"
+        },
+        {
+          "data": 12332,
+          "position": 44,
+          "type": "HIGHLOW"
+        },
+        {
+          "data": 12336,
+          "position": 48,
+          "type": "HIGHLOW"
+        },
+        {
+          "data": 12340,
+          "position": 52,
+          "type": "HIGHLOW"
+        },
+        {
+          "data": 12344,
+          "position": 56,
+          "type": "HIGHLOW"
+        }
+      ],
+      "virtual_address": 12288
+    },
+    {
+      "block_size": 88,
+      "entries": [
+        {
+          "data": 12384,
+          "position": 96,
+          "type": "HIGHLOW"
+        },
+        {
+          "data": 12388,
+          "position": 100,
+          "type": "HIGHLOW"
+        },
+        {
+          "data": 12392,
+          "position": 104,
+          "type": "HIGHLOW"
+        },
+        {
+          "data": 12396,
+          "position": 108,
+          "type": "HIGHLOW"
+        },
+        {
+          "data": 12400,
+          "position": 112,
+          "type": "HIGHLOW"
+        },
+        {
+          "data": 12748,
+          "position": 460,
+          "type": "HIGHLOW"
+        },
+        {
+          "data": 12752,
+          "position": 464,
+          "type": "HIGHLOW"
+        },
+        {
+          "data": 12756,
+          "position": 468,
+          "type": "HIGHLOW"
+        },
+        {
+          "data": 12760,
+          "position": 472,
+          "type": "HIGHLOW"
+        },
+        {
+          "data": 12764,
+          "position": 476,
+          "type": "HIGHLOW"
+        },
+        {
+          "data": 12776,
+          "position": 488,
+          "type": "HIGHLOW"
+        },
+        {
+          "data": 12784,
+          "position": 496,
+          "type": "HIGHLOW"
+        },
+        {
+          "data": 12792,
+          "position": 504,
+          "type": "HIGHLOW"
+        },
+        {
+          "data": 12796,
+          "position": 508,
+          "type": "HIGHLOW"
+        },
+        {
+          "data": 12800,
+          "position": 512,
+          "type": "HIGHLOW"
+        },
+        {
+          "data": 12804,
+          "position": 516,
+          "type": "HIGHLOW"
+        },
+        {
+          "data": 12808,
+          "position": 520,
+          "type": "HIGHLOW"
+        },
+        {
+          "data": 12812,
+          "position": 524,
+          "type": "HIGHLOW"
+        },
+        {
+          "data": 12816,
+          "position": 528,
+          "type": "HIGHLOW"
+        },
+        {
+          "data": 12940,
+          "position": 652,
+          "type": "HIGHLOW"
+        },
+        {
+          "data": 12944,
+          "position": 656,
+          "type": "HIGHLOW"
+        },
+        {
+          "data": 12948,
+          "position": 660,
+          "type": "HIGHLOW"
+        },
+        {
+          "data": 12952,
+          "position": 664,
+          "type": "HIGHLOW"
+        },
+        {
+          "data": 12956,
+          "position": 668,
+          "type": "HIGHLOW"
+        },
+        {
+          "data": 12960,
+          "position": 672,
+          "type": "HIGHLOW"
+        },
+        {
+          "data": 12964,
+          "position": 676,
+          "type": "HIGHLOW"
+        },
+        {
+          "data": 12968,
+          "position": 680,
+          "type": "HIGHLOW"
+        },
+        {
+          "data": 12972,
+          "position": 684,
+          "type": "HIGHLOW"
+        },
+        {
+          "data": 12976,
+          "position": 688,
+          "type": "HIGHLOW"
+        },
+        {
+          "data": 12980,
+          "position": 692,
+          "type": "HIGHLOW"
+        },
+        {
+          "data": 12984,
+          "position": 696,
+          "type": "HIGHLOW"
+        },
+        {
+          "data": 12988,
+          "position": 700,
+          "type": "HIGHLOW"
+        },
+        {
+          "data": 12992,
+          "position": 704,
+          "type": "HIGHLOW"
+        },
+        {
+          "data": 12996,
+          "position": 708,
+          "type": "HIGHLOW"
+        },
+        {
+          "data": 13004,
+          "position": 716,
+          "type": "HIGHLOW"
+        },
+        {
+          "data": 13008,
+          "position": 720,
+          "type": "HIGHLOW"
+        },
+        {
+          "data": 13012,
+          "position": 724,
+          "type": "HIGHLOW"
+        },
+        {
+          "data": 13016,
+          "position": 728,
+          "type": "HIGHLOW"
+        },
+        {
+          "data": 13020,
+          "position": 732,
+          "type": "HIGHLOW"
+        },
+        {
+          "data": 0,
+          "position": 0,
+          "type": "ABSOLUTE"
+        }
+      ],
+      "virtual_address": 16384
+    },
+    {
+      "block_size": 16,
+      "entries": [
+        {
+          "data": 12300,
+          "position": 12,
+          "type": "HIGHLOW"
+        },
+        {
+          "data": 12312,
+          "position": 24,
+          "type": "HIGHLOW"
+        },
+        {
+          "data": 12316,
+          "position": 28,
+          "type": "HIGHLOW"
+        },
+        {
+          "data": 0,
+          "position": 0,
+          "type": "ABSOLUTE"
+        }
+      ],
+      "virtual_address": 36864
+    }
+  ],
+  "resources_manager": {
+    "version": {
+      "fixed_file_info": {
+        "file_date_LS": 0,
+        "file_date_MS": 0,
+        "file_flags": 0,
+        "file_flags_mask": 63,
+        "file_os": "WINDOWS32",
+        "file_subtype": "UNKNOWN",
+        "file_type": "DLL",
+        "file_version_LS": 262144,
+        "file_version_MS": 327695,
+        "product_version_LS": 262144,
+        "product_version_MS": 327695,
+        "signature": 4277077181,
+        "struct_version": 65536
+      },
+      "key": "VS_VERSION_INFO",
+      "string_file_info": {
+        "key": "StringFileInfo",
+        "langcode_items": [
+          {
+            "items": {
+              "CompanyName": "The Qt Company Ltd.",
+              "FileDescription": "C++ Application Development Framework",
+              "FileVersion": "5.15.4.0",
+              "LegalCopyright": "Copyright (C) 2020 The Qt Company Ltd.",
+              "OriginalFilename": "qmlshapesplugin.dll",
+              "ProductName": "Qt5",
+              "ProductVersion": "5.15.4.0"
+            },
+            "key": "040904b0",
+            "type": 1
+          }
+        ],
+        "type": 1
+      },
+      "type": 0,
+      "var_file_info": {
+        "key": "VarFileInfo",
+        "translations": [
+          78644233
+        ],
+        "type": 1
+      }
+    }
+  },
+  "resources_tree": {
+    "characteristics": 0,
+    "childs": [
+      {
+        "characteristics": 0,
+        "childs": [
+          {
+            "characteristics": 0,
+            "childs": [
+              {
+                "code_page": 0,
+                "hash": 1334019820,
+                "offset": 13912,
+                "reserved": 0
+              }
+            ],
+            "id": 1,
+            "major_version": 0,
+            "minor_version": 0,
+            "numberof_id_entries": 1,
+            "numberof_name_entries": 0,
+            "time_date_stamp": 0
+          }
+        ],
+        "id": 16,
+        "major_version": 0,
+        "minor_version": 0,
+        "numberof_id_entries": 1,
+        "numberof_name_entries": 0,
+        "time_date_stamp": 0
+      }
+    ],
+    "id": 0,
+    "major_version": 0,
+    "minor_version": 0,
+    "numberof_id_entries": 1,
+    "numberof_name_entries": 0,
+    "time_date_stamp": 0
+  },
+  "sections": [
+    {
+      "characteristics": [
+        "CNT_CODE",
+        "CNT_INITIALIZED_DATA",
+        "MEM_EXECUTE",
+        "MEM_READ"
+      ],
+      "entropy": 6.010677619628413,
+      "name": ".text",
+      "numberof_line_numbers": 0,
+      "numberof_relocations": 0,
+      "pointerto_line_numbers": 0,
+      "pointerto_relocation": 0,
+      "size": 6144,
+      "types": [
+        "UNKNOWN"
+      ],
+      "vsize": 5704
+    },
+    {
+      "characteristics": [
+        "CNT_INITIALIZED_DATA",
+        "MEM_READ",
+        "MEM_WRITE"
+      ],
+      "entropy": 3.1698839662792677,
+      "name": ".data",
+      "numberof_line_numbers": 0,
+      "numberof_relocations": 0,
+      "pointerto_line_numbers": 0,
+      "pointerto_relocation": 0,
+      "size": 512,
+      "types": [
+        "UNKNOWN"
+      ],
+      "vsize": 60
+    },
+    {
+      "characteristics": [
+        "CNT_INITIALIZED_DATA",
+        "MEM_READ"
+      ],
+      "entropy": 5.070540750644296,
+      "name": ".rdata",
+      "numberof_line_numbers": 0,
+      "numberof_relocations": 0,
+      "pointerto_line_numbers": 0,
+      "pointerto_relocation": 0,
+      "size": 1536,
+      "types": [
+        "TLS_",
+        "UNKNOWN"
+      ],
+      "vsize": 1208
+    },
+    {
+      "characteristics": [
+        "CNT_INITIALIZED_DATA",
+        "MEM_READ"
+      ],
+      "entropy": 4.767340111369627,
+      "name": ".qtmetad",
+      "numberof_line_numbers": 0,
+      "numberof_relocations": 0,
+      "pointerto_line_numbers": 0,
+      "pointerto_relocation": 0,
+      "size": 512,
+      "types": [
+        "UNKNOWN"
+      ],
+      "vsize": 128
+    },
+    {
+      "characteristics": [
+        "CNT_UNINITIALIZED_DATA",
+        "MEM_READ",
+        "MEM_WRITE"
+      ],
+      "entropy": 0,
+      "name": ".bss",
+      "numberof_line_numbers": 0,
+      "numberof_relocations": 0,
+      "pointerto_line_numbers": 0,
+      "pointerto_relocation": 0,
+      "size": 0,
+      "types": [
+        "UNKNOWN"
+      ],
+      "vsize": 112
+    },
+    {
+      "characteristics": [
+        "CNT_INITIALIZED_DATA",
+        "MEM_READ"
+      ],
+      "entropy": 4.092840831427985,
+      "name": ".edata",
+      "numberof_line_numbers": 0,
+      "numberof_relocations": 0,
+      "pointerto_line_numbers": 0,
+      "pointerto_relocation": 0,
+      "size": 512,
+      "types": [
+        "UNKNOWN"
+      ],
+      "vsize": 124
+    },
+    {
+      "characteristics": [
+        "CNT_INITIALIZED_DATA",
+        "MEM_READ",
+        "MEM_WRITE"
+      ],
+      "entropy": 5.20623361744937,
+      "name": ".idata",
+      "numberof_line_numbers": 0,
+      "numberof_relocations": 0,
+      "pointerto_line_numbers": 0,
+      "pointerto_relocation": 0,
+      "size": 2560,
+      "types": [
+        "IDATA",
+        "UNKNOWN"
+      ],
+      "vsize": 2240
+    },
+    {
+      "characteristics": [
+        "CNT_INITIALIZED_DATA",
+        "MEM_READ",
+        "MEM_WRITE"
+      ],
+      "entropy": 1.4145502335655722,
+      "name": ".CRT",
+      "numberof_line_numbers": 0,
+      "numberof_relocations": 0,
+      "pointerto_line_numbers": 0,
+      "pointerto_relocation": 0,
+      "size": 512,
+      "types": [
+        "UNKNOWN"
+      ],
+      "vsize": 44
+    },
+    {
+      "characteristics": [
+        "CNT_INITIALIZED_DATA",
+        "MEM_READ",
+        "MEM_WRITE"
+      ],
+      "entropy": 0,
+      "name": ".tls",
+      "numberof_line_numbers": 0,
+      "numberof_relocations": 0,
+      "pointerto_line_numbers": 0,
+      "pointerto_relocation": 0,
+      "size": 512,
+      "types": [
+        "UNKNOWN"
+      ],
+      "vsize": 8
+    },
+    {
+      "characteristics": [
+        "CNT_INITIALIZED_DATA",
+        "MEM_READ",
+        "MEM_WRITE"
+      ],
+      "entropy": 3.3110980703497876,
+      "name": ".rsrc",
+      "numberof_line_numbers": 0,
+      "numberof_relocations": 0,
+      "pointerto_line_numbers": 0,
+      "pointerto_relocation": 0,
+      "size": 1024,
+      "types": [
+        "RESOURCE",
+        "UNKNOWN"
+      ],
+      "vsize": 840
+    },
+    {
+      "characteristics": [
+        "CNT_INITIALIZED_DATA",
+        "MEM_DISCARDABLE",
+        "MEM_READ"
+      ],
+      "entropy": 6.296079140854893,
+      "name": ".reloc",
+      "numberof_line_numbers": 0,
+      "numberof_relocations": 0,
+      "pointerto_line_numbers": 0,
+      "pointerto_relocation": 0,
+      "size": 1024,
+      "types": [
+        "RELOCATION",
+        "UNKNOWN"
+      ],
+      "vsize": 608
+    }
+  ],
+  "tls": {
+    "addressof_callbacks": 1654427672,
+    "addressof_index": 1654415408,
+    "addressof_raw_data": [
+      1654431744,
+      1654431748
+    ],
+    "callbacks": [
+      1654396832,
+      1654396752
+    ],
+    "characteristics": 0,
+    "data_directory": "TLS_TABLE",
+    "section": ".rdata",
+    "sizeof_zero_fill": 0
+  },
+  "virtual_size": 53248
+}
