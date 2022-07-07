@@ -252,7 +252,8 @@ class ExportsInfo(FeatureType):
         # Clipping assumes there are diminishing returns on the discriminatory power of exports beyond
         #  the first 10000 characters, and this will help limit the dataset size
 
-        exports = [export['name'][:10000] for export in root['export']['entries']]
+        exports = [export['name'][:10000] for export in root.get('export', {}).get('entries', {})]
+        #exports = [export['name'][:10000] for export in root['export']['entries']]
 
         return exports
 
@@ -289,13 +290,13 @@ class GeneralFileInfo(FeatureType):
             'size': int(root['customFields']['size']),
             'vsize': int(root['virtual_size']),
             'has_debug': int(root['customFields']['has_debug']),
-            'exports': len(root['export']['entries']),
+            'exports': len(root.get('export', {}).get('entries', {})),
             'imports': sum(len(e['entries']) for e in root['imports']),
             'has_relocations': int(root['customFields']['has_relocations']),
             'has_resources': int(root['customFields']['has_resources']),
             'has_signature': int(root['customFields']['has_signatures']),
             'has_tls': int(root['customFields']['has_tls']),
-            'symbols': len(root['symbols']),
+            'symbols': len(root.get('symbols', [])),
         }
 
     def process_raw_features(self, raw_obj):
